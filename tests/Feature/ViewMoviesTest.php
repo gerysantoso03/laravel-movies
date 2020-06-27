@@ -47,6 +47,50 @@ class ViewMoviesTest extends TestCase
          $response->assertSee('Adi Petualang');
      }
 
+     /** @test */
+    public function livewire_search_dropdown_work_correctly()
+    {
+        Http::fake([
+            'https://api.themoviedb.org/3/search/movie?query=ucup' => $this->fakeSearchMovies(),
+        ]);
+
+        Livewire::test('search-dropdown')
+            ->assertDontSee('jumanji')
+            ->set('search', 'jumanji')
+            ->assertSee('Ucup');
+    }
+
+    // Fake search movie data to testing livewire search dropdown
+    private function fakeSearchMovie()
+    {
+        return Http::response([
+                'results' => [
+                    [
+                        "popularity" => 999.999,
+                        "vote_count" => 2607,
+                        "video" => false,
+                        "poster_path" => "/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg",
+                        "id" => 419777,
+                        "adult" => false,
+                        "backdrop_path" => "/5BwqwxMEjeFtdknRV792Svo0K1v.jpg",
+                        "original_language" => "id",
+                        "original_title" => "Ucup Kusnandar",
+                        "genre_ids" => [
+                            12,
+                            18,
+                            9648,
+                            878,
+                            53,
+                        ],
+                        "title" => "Ucup Kusnandar",
+                        "vote_average" => 9,
+                        "overview" => "Seorang bapak yang senang bermain facebook dan menggoda gadis-gadis muda yang kesepian karena ditinggal mantan tercintanya",
+                        "release_date" => "2021-01-01",
+                    ]
+                ]
+            ], 200);
+    }
+
     // Fake popular movies data to testing the api
     private function fakePopularMovies()
     {
