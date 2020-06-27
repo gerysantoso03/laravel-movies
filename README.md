@@ -93,7 +93,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Special Thanks to Andre Madarang
 
-This movie web inspired and all of the code was made by Andre Madarang tutorial
+This movie web was inspired and all of the code was made by Andre Madarang tutorial
 
 -   [Youtube](https://www.youtube.com/channel/UCtb40EQj2inp8zuaQlLx3iQ)
 -   [Github](https://github.com/drehimself/laravel-movies-example)
