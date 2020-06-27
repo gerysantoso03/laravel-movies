@@ -84,9 +84,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## API
+## Website Source
 
 -   [API](https://developers.themoviedb.org/3/getting-started/introduction)
+-   [Livewire](https://laravel-livewire.com/docs/installation)
+-   [Tailwind CSS](https://tailwindcss.com/docs/installation/)
+-   [Tailwind CSS Spinner](https://github.com/aniftyco/tailwindcss-spinner)
 
 ## Special Thanks to Andre Madarang
 
