@@ -90,6 +90,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 -   [Livewire](https://laravel-livewire.com/docs/installation)
 -   [Tailwind CSS](https://tailwindcss.com/docs/installation/)
 -   [Tailwind CSS Spinner](https://github.com/aniftyco/tailwindcss-spinner)
+-   [Alpine JS](https://github.com/alpinejs/alpine)
+-   [Fluid Video CSS](https://css-tricks.com/fluid-width-video/)
 
 ## Special Thanks to Andre Madarang
 
