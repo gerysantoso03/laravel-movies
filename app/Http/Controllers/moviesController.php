@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ViewModels\MoviesViewModel;
 use Illuminate\Support\Facades\Http;
+use App\ViewModels\MovieDetailViewModel;
 
 class moviesController extends Controller
 {
@@ -25,22 +27,32 @@ class moviesController extends Controller
             ->json()['results'];
         
         // Get movies genres
-        $arrayOfGenres = Http::withToken(config('services.tmdb.token'))
+        // Previous variable of $genres => $arrayOfGenres
+        // collect method for get genres name move to MoviesViewModel
+        $genres = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/genre/movie/list')
             ->json()['genres'];
         
         // Store arrayOfGenres into another array using laravel collection
-        $genres = collect($arrayOfGenres)->mapWithKeys(function($genre){
-            return [$genre['id'] => $genre['name']]; // Result store in array
-        });
+        // $genres = collect($arrayOfGenres)->mapWithKeys(function($genre){
+        //     return [$genre['id'] => $genre['name']]; // Result store in array
+        // });
 
         //dump($nowPlayingMovies);
 
-        return view('index', [
-            'popularMovies' => $popularMovies,
-            'nowPlayingMovies' => $nowPlayingMovies,
-            'genres' => $genres,
-        ]);
+        // return view('index', [
+        //     'popularMovies' => $popularMovies,
+        //     'nowPlayingMovies' => $nowPlayingMovies,
+        //     'genres' => $genres,
+        // ]);
+
+        $viewModel = new MoviesViewModel(
+            $popularMovies,
+            $nowPlayingMovies,
+            $genres,
+        );
+
+        return view('index', $viewModel);
     }
 
     /**
@@ -80,9 +92,9 @@ class moviesController extends Controller
 
         // dump($movie);
 
-        return view('show', [
-            'movie' => $movie,
-        ]);
+        $viewModel = new MovieDetailViewModel($movie);
+        
+        return view('show', $viewModel);
     }
 
     /**
