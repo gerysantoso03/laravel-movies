@@ -84,6 +84,44 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+## Installations and Usage
+
+#### 1. Clone this respository
+
+```
+git clone https://github.com/gerysantoso03/laravel-movies.git
+```
+
+#### 2. Move to folder
+
+```
+cd laravel-movies
+```
+
+#### 3. Install this repo
+
+```
+composer install && npm install && npm run dev
+```
+
+#### 4. Generate Key
+
+```
+php artisan key:generate
+```
+
+#### 5. Serve
+
+```
+php artisan serve
+```
+
+#### 6. View website on localhost
+
+```
+Visit 127.0.0.1:8000 on your computer browser
+```
+
 ## Website Source
 
 -   [API](https://developers.themoviedb.org/3/getting-started/introduction)
@@ -92,6 +130,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 -   [Tailwind CSS Spinner](https://github.com/aniftyco/tailwindcss-spinner)
 -   [Alpine JS](https://github.com/alpinejs/alpine)
 -   [Fluid Video CSS](https://css-tricks.com/fluid-width-video/)
+-   [Laravel View Model](https://github.com/spatie/laravel-view-models)
 
 ## Special Thanks to Andre Madarang
 
