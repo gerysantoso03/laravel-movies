@@ -131,6 +131,8 @@ Visit 127.0.0.1:8000 on your computer browser
 -   [Alpine JS](https://github.com/alpinejs/alpine)
 -   [Fluid Video CSS](https://css-tricks.com/fluid-width-video/)
 -   [Laravel View Model](https://github.com/spatie/laravel-view-models)
+-   [Infinite-Scroll Initialization](https://infinite-scroll.com/)
+-   [Infinite-Scroll Options](https://infinite-scroll.com/options.html#responsetype)
 
 ## Special Thanks to Andre Madarang
 
