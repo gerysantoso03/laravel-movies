@@ -55,21 +55,29 @@ class ActorDetailViewModel extends ViewModel
     {
         $movieCast = collect($this->credits)->get('cast');
 
-        return collect($movieCast)->where('media_type', 'movie')->union(
-            collect($movieCast)->where('media_type', 'tv')
-        )->sortByDesc('popularity')->take(5)
-            ->map(function($movie) {
-                return collect($movie)->merge([
-                    'poster_path' => $movie['poster_path']
-                        ? 'https://image.tmdb.org/t/p/w185'.$movie['poster_path']
-                        : 'https://via.placeholder.com/185x278',
-                    'title' => isset($movie['title']) 
-                        ? $movie['title'] 
-                        : 'TV Show',
-                ])->only([
-                    'poster_path', 'title', 'id', 'media_type'
-                ]);
-            });
+        return collect($movieCast)->sortByDesc('popularity')->take(5)->map(function($movie) {
+            
+            // Check if movie has title and tv show has name 
+            if(isset($movie['title'])){
+                $title = $movie['title'];
+            }else if($movie['name']){
+                $title = $movie['name'];
+            }else{
+                $title = 'Untitled';
+            }
+            
+            return collect($movie)->merge([
+                'poster_path' => $movie['poster_path']
+                    ? 'https://image.tmdb.org/t/p/w185'.$movie['poster_path']
+                    : 'https://via.placeholder.com/185x278',
+                'title' => $title,
+                'link_movie' => $movie['media_type'] === 'movie'
+                    ? route('movies.show', $movie['id'])
+                    : route('tvshow.show', $movie['id']),
+            ])->only([
+                'poster_path', 'title', 'id', 'media_type', 'link_movie',
+            ]);
+        });
     }
 
     // Public function to show actor credits
@@ -105,7 +113,7 @@ class ActorDetailViewModel extends ViewModel
                 'title' => $title,
                 'character' => isset($movie['character'])
                     ? $movie['character']
-                    : 'Unknown',
+                    : ' ',
             ])->only([
                 'release_date', 'release_year', 'title', 'character',
             ]);
