@@ -15,5 +15,6 @@ module.exports = {
         })
     },
     variants: {},
+    purge: false,
     plugins: [require("tailwindcss-spinner")()]
 };

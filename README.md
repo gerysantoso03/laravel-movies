@@ -133,6 +133,7 @@ Visit 127.0.0.1:8000 on your computer browser
 -   [Laravel View Model](https://github.com/spatie/laravel-view-models)
 -   [Infinite-Scroll Initialization](https://infinite-scroll.com/)
 -   [Infinite-Scroll Options](https://infinite-scroll.com/options.html#responsetype)
+-   [Laravel Mix PurgeCSS](https://github.com/spatie/laravel-mix-purgecss)
 
 ## Special Thanks to Andre Madarang
 
