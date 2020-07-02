@@ -28,6 +28,6 @@ class TvShowDetailViewModel extends ViewModel
         ])->only([
             'poster_path', 'id', 'genres', 'name', 'vote_average', 'overview','videos', 'images', 
             'crew', 'cast', 'images', 'first_air_date', 'credits', 'created_by',
-        ])->dump();
+        ]);
     }
 }
