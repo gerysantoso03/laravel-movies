@@ -84,6 +84,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+## Set TMDB_TOKEN
+
+TMDB_TOKEN works for authentication access into themoviedb api to get the data using http request
+
+-   Rename .env.example into .env
+-   Set your own TMDB_TOKEN
+-   Get the API Key at https://www.themoviedb.org/settings/api
+-   Make sure use your own "API Read Access Token (v4 auth)"
+
 ## Installations and Usage
 
 #### 1. Clone this respository
@@ -124,6 +133,7 @@ Visit 127.0.0.1:8000 on your computer browser
 
 ## Website Source
 
+-   [Github Source](https://github.com/drehimself/laravel-movies-example)
 -   [API](https://developers.themoviedb.org/3/getting-started/introduction)
 -   [Livewire](https://laravel-livewire.com/docs/installation)
 -   [Tailwind CSS](https://tailwindcss.com/docs/installation/)
@@ -134,10 +144,3 @@ Visit 127.0.0.1:8000 on your computer browser
 -   [Infinite-Scroll Initialization](https://infinite-scroll.com/)
 -   [Infinite-Scroll Options](https://infinite-scroll.com/options.html#responsetype)
 -   [Laravel Mix PurgeCSS](https://github.com/spatie/laravel-mix-purgecss)
-
-## Special Thanks to Andre Madarang
-
-This movie web was inspired and all of the code was made by Andre Madarang tutorial
-
--   [Youtube](https://www.youtube.com/channel/UCtb40EQj2inp8zuaQlLx3iQ)
--   [Github](https://github.com/drehimself/laravel-movies-example)
